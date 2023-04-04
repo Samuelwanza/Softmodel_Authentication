@@ -14,38 +14,43 @@ class Onboardingbody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        // const Spacer(),
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Container(
-              height: MediaQuery.of(context).size.height * .65,
-              width: MediaQuery.of(context).size.width * .85,
-              // width: 350,
-              decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                  color: Color(0xffffffff)),
-              child: SvgPicture.asset(
-                image,
-              )),
-        ),
-        // const Spacer(),
-        Text(
-          title,
-          textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-              fontWeight: FontWeight.w700, color: const Color(0xff072f54)),
-        ),
-        const SizedBox(
-          height: 16,
-        ),
-        Text(
-          description,
-          textAlign: TextAlign.center,
-        ),
-        // const Spacer(),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          // const Spacer(),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Container(
+                height: MediaQuery.of(context).size.height * .65,
+                width: MediaQuery.of(context).size.width * .85,
+                // width: 350,
+                decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                    color: Color(0xffffffff)),
+                child: SvgPicture.asset(
+                  image,
+                )),
+          ),
+          // const Spacer(),
+          Text(
+            title,
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                fontWeight: FontWeight.w700, color: const Color(0xff072f54)),
+          ),
+          const SizedBox(
+            height: 0,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Text(
+              description,
+              textAlign: TextAlign.center,
+            ),
+          ),
+          // const Spacer(),
+        ],
+      ),
     );
   }
 }
